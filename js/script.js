@@ -36,9 +36,13 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
-let app;
+
 for(let i = 0; i<teamMembers.length ; i++){
-  console.log(teamMembers[i])
-  app = document.getElementById("card"+[i+1]);
-  console.log(app)
+  document.getElementById("image"+i).src = teamMembers[i].img;
+  document.getElementById("nameSurname"+i).innerText = teamMembers[i].name;
+  document.getElementById("mansion"+i).innerText = teamMembers[i].role;
+  document.getElementById("link"+i).innerText = teamMembers[i].email;
 }
+
+
+
