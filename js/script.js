@@ -84,7 +84,7 @@ form.addEventListener("submit", function (event) {
   }
 
   teamMembers.push(objApp)
-
+  add.innerHTML = " ";
   printCards(teamMembers);
 
 })
