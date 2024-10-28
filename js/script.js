@@ -1,7 +1,6 @@
 function createCard(nameSurname, role, email, img){
-  // let add= document.getElementById("add");
-  add.innerHTML+=
-  `<div class="col-4">
+  return `
+  <div class="col-4">
     <div class="card mb-3 bg-black text-white" id="card">
       <div class="row g-0">
         <div class="col-md-4">
@@ -17,6 +16,13 @@ function createCard(nameSurname, role, email, img){
       </div>
     </div>
   </div>`
+
+}
+
+function printCards(arr){
+  for(let i = 0; i<arr.length ; i++){  
+    add.innerHTML += createCard(arr[i].name, arr[i].role, arr[i].email, arr[i].img);
+  }
 }
 
 const teamMembers = [
@@ -58,12 +64,7 @@ const teamMembers = [
   }
 ];
 
-for(let i = 0; i<teamMembers.length ; i++){
-  document.getElementById("image"+i).src = teamMembers[i].img;
-  document.getElementById("nameSurname"+i).innerText = teamMembers[i].name;
-  document.getElementById("mansion"+i).innerText = teamMembers[i].role;
-  document.getElementById("link"+i).innerText = teamMembers[i].email;
-}
+printCards(teamMembers);
 
 const form = document.getElementById("form");
 
@@ -75,14 +76,15 @@ form.addEventListener("submit", function (event) {
   let email = document.getElementById("email").value; 
   let img = document.getElementById("img").value; 
 
-  console.log(nameSurname, role, email, img)
   let objApp = {
     name: nameSurname,
     role: role,
     email: email,
     img: img
   }
-  createCard(nameSurname, role, email, img);
+
   teamMembers.push(objApp)
-  console.log(teamMembers)
+
+  printCards(teamMembers);
+
 })
