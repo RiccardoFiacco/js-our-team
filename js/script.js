@@ -20,6 +20,7 @@ function createCard(nameSurname, role, email, img){
 }
 
 function printCards(arr){
+  add.innerHTML = " ";
   for(let i = 0; i<arr.length ; i++){  
     add.innerHTML += createCard(arr[i].name, arr[i].role, arr[i].email, arr[i].img);
   }
@@ -84,7 +85,6 @@ form.addEventListener("submit", function (event) {
   }
 
   teamMembers.push(objApp)
-  add.innerHTML = " ";
   printCards(teamMembers);
 
 })
