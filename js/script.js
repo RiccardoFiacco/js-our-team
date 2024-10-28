@@ -36,3 +36,9 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+let app;
+for(let i = 0; i<teamMembers.length ; i++){
+  console.log(teamMembers[i])
+  app = document.getElementById("card"+[i+1]);
+  console.log(app)
+}
